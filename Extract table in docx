@@ -1,0 +1,15 @@
+import docx   #pip install python-docx
+from docx import Document
+docfile='C:\\Users\\86187\\Desktop\\1.docx'
+document=Document(docfile)
+tables=document.tables   #找到我们的文档里的表格对象
+# print(tables)
+table=tables[1]  #获取docx文件中的第二个表格
+
+for i in range(0,len(table.rows)):
+    #从这个表格的第一行开始遍历
+    print(table.cell(i,0).text) #第一列
+    print(table.cell(i,1).text) #第二列
+    print(table.cell(i,2).text) #第三列
+    print(table.cell(i,3).text) #第四列
+    
